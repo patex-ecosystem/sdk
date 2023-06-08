@@ -24,6 +24,7 @@ export enum L1ChainID {
  * L2 network chain IDs
  */
 export enum L2ChainID {
+  PATEX = 789,
   PATEX_SEPOLIA = 471100,
 }
 

@@ -17,6 +17,7 @@ import { StandardBridgeAdapter, DAIBridgeAdapter } from '../adapters'
 export const DEPOSIT_CONFIRMATION_BLOCKS: {
   [ChainID in L2ChainID]: number
 } = {
+  [L2ChainID.PATEX]: 12 as const,
   [L2ChainID.PATEX_SEPOLIA]: 12 as const,
 }
 
@@ -81,6 +82,22 @@ const getL1ContractsByNetworkName = (network: string): OEL1ContractsLike => {
 export const CONTRACT_ADDRESSES: {
   [ChainID in L2ChainID]: OEContractsLike
 } = {
+  [L2ChainID.PATEX]: {
+    l1: {
+      AddressManager: '0xef941450Ac3a5DB13f88A7d2e9aA3ec0A05607ae' as const,
+      L1CrossDomainMessenger:
+        '0x715bf62E5fCD1be64C929411155069d349B926b9' as const,
+      L1StandardBridge: '0xb915E7bcA23e71441131D94f7FA2D95f6211dAf4' as const,
+      StateCommitmentChain:
+        '0x0000000000000000000000000000000000000000' as const,
+      CanonicalTransactionChain:
+        '0x0000000000000000000000000000000000000000' as const,
+      BondManager: '0x0000000000000000000000000000000000000000' as const,
+      PatexPortal: '0x0d6e11E2A3B2B3a245bf839c07D775983aCB787d' as const,
+      L2OutputOracle: '0x89704C05fd168a551a9C40952430f3f4788b7abd' as const,
+    },
+    l2: DEFAULT_L2_CONTRACT_ADDRESSES,
+  },
   [L2ChainID.PATEX_SEPOLIA]: {
     l1: {
       AddressManager: '0x17248a97cE50Cb271c945E10C571038e9c8DECEE' as const,
