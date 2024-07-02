@@ -103,7 +103,7 @@ export const CONTRACT_ADDRESSES: {
       AddressManager: '0x17248a97cE50Cb271c945E10C571038e9c8DECEE' as const,
       L1CrossDomainMessenger:
         '0xBdBeA7f90c8E234a1edA6948d9F772D4c50f5bD5' as const,
-      L1StandardBridge: '0xf0D8C28F3902Fac5b6C2dBc8574339bD84535a01' as const,
+      L1StandardBridge: '0x381CCCa35eD7C1e170c43e6B317AB05A2FCeF1A5' as const,
       StateCommitmentChain:
         '0x0000000000000000000000000000000000000000' as const,
       CanonicalTransactionChain:
@@ -112,7 +112,10 @@ export const CONTRACT_ADDRESSES: {
       PatexPortal: '0xD7400A9E3bd054264be87443939770dcf23E5b95' as const,
       L2OutputOracle: '0x77daF3f9aC6Cfe26ad8669EC95b8A4F6ab810E72' as const,
     },
-    l2: DEFAULT_L2_CONTRACT_ADDRESSES,
+    l2: {
+      ...DEFAULT_L2_CONTRACT_ADDRESSES,
+      L2StandardBridge: '0x35FbeAb87d6252802Fc325d6C6AE2e6e758dd76D',
+    },
   },
 }
 
